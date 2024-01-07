@@ -32,10 +32,10 @@ def calculate_growth(input_file, output_file, interval=1):
 def main():
     input_file = 'data/spx_1_year_changes.csv'
     calculate_growth(input_file, 'data/spx_1_year_growths.csv')
-    input_file = 'data/spx_2_year_changes.csv'
-    calculate_growth(input_file, 'data/spx_2_year_growths.csv', 2)
-    input_file = 'data/spx_5_year_changes.csv'
-    calculate_growth(input_file, 'data/spx_5_year_growths.csv', 5)
+    # input_file = 'data/spx_2_year_changes.csv'
+    # calculate_growth(input_file, 'data/spx_2_year_growths.csv', 2)
+    # input_file = 'data/spx_5_year_changes.csv'
+    # calculate_growth(input_file, 'data/spx_5_year_growths.csv', 5)
 
 if __name__ == "__main__":
     main()
