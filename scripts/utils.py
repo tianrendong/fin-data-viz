@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from pandas_market_calendars import get_calendar
 
+years = list(range(1993, 2024))
+
 def generate_days_in_year(year):
     """
     Generate dates for each day in the specified year.

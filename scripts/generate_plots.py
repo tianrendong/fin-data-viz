@@ -3,9 +3,8 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.models import HoverTool
 from tqdm import tqdm
 
-from utils import generate_days_in_year
+from utils import years, generate_days_in_year
 
-years = list(range(1993, 2024))
 dates = []
 for day in generate_days_in_year(2022):
     dates.append(day.strftime("%m-%d"))
@@ -46,7 +45,7 @@ def generate_plots(data_file, plot_title, html_file):
                 changes = []
                 i += 1
                 
-            changes.append(float(row[1]))
+            changes.append(float(row[4]))
             progress_bar.update(1) 
 
         progress_bar.close() 
@@ -65,9 +64,9 @@ def generate_plots(data_file, plot_title, html_file):
     show(p)
 
 def main():
-    # generate_plots("data/spx_1_year_change.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "plots/spx_1_year_change.html")
-    generate_plots("data/spx_2_year_change.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "plots/spx_2_year_change.html")
-    # generate_plots("data/spx_5_year_change.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "plots/spx_5_year_change.html")
+    generate_plots("data/spx_1_year.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "plots/spx_1_year_change.html")
+    generate_plots("data/spx_2_year.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "plots/spx_2_year_change.html")
+    generate_plots("data/spx_5_year.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "plots/spx_5_year_change.html")
 
 if __name__ == "__main__":
     main()
