@@ -56,7 +56,10 @@ def generate_plots(data_file, plot_title, html_file):
     hover.tooltips = [("Date", "@x"), ("Percent Change", "@top")]
     p.add_tools(hover)
 
-    p.xaxis.visible = False
+    p.xaxis.axis_label = "Day of Year"
+    p.xaxis.major_label_text_color = None
+    p.xaxis.major_tick_line_color = None
+    p.xaxis.minor_tick_line_color = None
     p.grid.grid_line_color = None
 
     show(p)
