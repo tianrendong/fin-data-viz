@@ -1,5 +1,5 @@
-import yfinance as yf
 import pandas as pd
+import yfinance as yf
 from tqdm import tqdm
 
 from utils import prices_years, generate_days_in_year, get_last_trading_day

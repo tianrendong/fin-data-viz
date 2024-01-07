@@ -1,6 +1,4 @@
-import csv
 import pandas as pd
-import yfinance as yf
 from tqdm import tqdm
 
 from utils import years, generate_days_in_year, get_same_day_years_ago, calculate_percent_change
