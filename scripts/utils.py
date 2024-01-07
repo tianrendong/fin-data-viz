@@ -1,10 +1,8 @@
-import yfinance as yf
-import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from pandas_market_calendars import get_calendar
 
-def generate_days(year):
+def generate_days_in_year(year):
     """
     Generate dates for each day in the specified year.
 
@@ -16,12 +14,17 @@ def generate_days(year):
     """
     start_date = datetime(year, 1, 1)
     end_date = datetime(year, 12, 31)
+    
     current_date = start_date
     while current_date <= end_date:
+        # Skip February 29th
+        if current_date.month == 2 and current_date.day == 29:
+            current_date += timedelta(days=1)
+
         yield current_date
         current_date += timedelta(days=1)
 
-def get_same_day(date, years_ago=1):
+def get_same_day_years_ago(date, years_ago=1):
     """
     Get the corresponding day in the previous year, considering leap years.
 
@@ -75,33 +78,3 @@ def calculate_percent_change(new_price, old_price):
     - float: The percent change between the two prices.
     """
     return (new_price - old_price) / old_price * 100
-
-def main():
-    spx = yf.Ticker("^SPX")
-    closing_prices = spx.history(period="25y")['Close']
-    years = range(2022, 2024)
-    plt.figure(figsize=(12, 6))
-    
-    for year in years:
-        dates = []
-        changes = []
-        for day in generate_days(year):
-            curr_date = get_last_trading_day(day).strftime("%Y-%m-%d")
-            old_date = get_last_trading_day(get_same_day(day)).strftime("%Y-%m-%d")
-            curr_price = closing_prices[curr_date]
-            old_price = closing_prices[old_date]
-            percent_change = calculate_percent_change(curr_price, old_price)
-            dates.append(day.strftime('%Y-%m-%d'))
-            changes.append(percent_change)
-
-        plt.plot(dates, changes, label=f'{year}-{year+1}')
-
-    plt.xlabel('Date')
-    plt.xticks([])
-    plt.ylabel('Percent Change')
-    plt.title('S&P 500 1-Year Change for 2022-2023')
-    plt.legend()
-    plt.show()
-
-if __name__ == "__main__":
-    main()
