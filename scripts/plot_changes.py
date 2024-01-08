@@ -45,9 +45,10 @@ def plot_changes(data_file, plot_title, html_file):
     show(p)
 
 def main():
-    plot_changes("data/spx_1_year_changes.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "web/plots/spx_1_year_change.html")
-    plot_changes("data/spx_2_year_changes.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "web/plots/spx_2_year_change.html")
-    plot_changes("data/spx_5_year_changes.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "web/plots/spx_5_year_change.html")
+    # plot_changes("data/spx_1_year_changes.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "web/plots/spx_1_year_change.html")
+    # plot_changes("data/spx_2_year_changes.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "web/plots/spx_2_year_change.html")
+    # plot_changes("data/spx_5_year_changes.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "web/plots/spx_5_year_change.html")
+    plot_changes("data/spx_monthly_changes.csv", "S&P 500 Monthly Same Date Change for 1993-2023", "web/plots/spx_monthly_change.html")
 
 if __name__ == "__main__":
     main()

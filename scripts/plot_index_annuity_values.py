@@ -48,9 +48,10 @@ def plot_indexed_annuity_values(data_dir, plot_title, html_file):
     show(p)
 
 def main():
-    plot_indexed_annuity_values("data/indexed_annuity/1_year/", "20 Year Period Indexed Annuity Values based on SPX With 1 Year Interval", "web/plots/indexed_annuity/1_year_values.html")
-    plot_indexed_annuity_values("data/indexed_annuity/2_year/", "20 Year Period Indexed Annuity Values based on SPX with 2 Year Interval", "web/plots/indexed_annuity/2_year_values.html")
-    plot_indexed_annuity_values("data/indexed_annuity/5_year/", "20 Year Period Indexed Annuity Values based on SPX with 5 Year Interval", "web/plots/indexed_annuity/5_year_values.html")
+    # plot_indexed_annuity_values("data/indexed_annuity/1_year/", "20 Year Period Indexed Annuity Values based on SPX With 1 Year Interval", "web/plots/indexed_annuity/1_year_values.html")
+    # plot_indexed_annuity_values("data/indexed_annuity/2_year/", "20 Year Period Indexed Annuity Values based on SPX with 2 Year Interval", "web/plots/indexed_annuity/2_year_values.html")
+    # plot_indexed_annuity_values("data/indexed_annuity/5_year/", "20 Year Period Indexed Annuity Values based on SPX with 5 Year Interval", "web/plots/indexed_annuity/5_year_values.html")
+    plot_indexed_annuity_values("data/indexed_annuity/monthly/", "20 Year Period Indexed Annuity Values based on SPX with Monthly Interval", "web/plots/indexed_annuity/monthly_values.html")
 
 if __name__ == "__main__":
     main()

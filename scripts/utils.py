@@ -28,7 +28,7 @@ def generate_days_in_year(year):
 
 def get_same_day_years_ago(date, years_ago=1):
     """
-    Get the corresponding day in the previous year, considering leap years.
+    Get the corresponding day in the previous year.
 
     Parameters:
     - date (datetime): The date for which to get the corresponding day.
@@ -38,6 +38,18 @@ def get_same_day_years_ago(date, years_ago=1):
     - datetime: A datetime object representing the corresponding day in the previous year.
     """
     return date - relativedelta(years=years_ago)
+
+def get_same_day_last_month(date):
+    """
+    Get the corresponding day in the previous month.
+
+    Parameters:
+    - date (datetime): The date for which to get the corresponding day.
+
+    Returns:
+    - datetime: A datetime object representing the corresponding day in the previous month.
+    """
+    return date - relativedelta(months=1)
 
 def is_trading_day(date):
     """
@@ -77,6 +89,6 @@ def calculate_percent_change(new_price, old_price):
     - old_price (float): The old price.
 
     Returns:
-    - float: The percent change between the two prices.
+    - float: The percent change between the two prices. Note: 50% increase is represented as 50, not 0.5.
     """
     return (new_price - old_price) / old_price * 100
