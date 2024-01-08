@@ -9,9 +9,9 @@ dates = []
 for day in generate_days_in_year(2022):
     dates.append(day.strftime("%m-%d"))
 
-def generate_plots(data_file, plot_title, html_file):
+def plot_changes(data_file, plot_title, html_file):
     """
-    Generate an interactive plot with hover.
+    Plot the changes of SPX for each day.
 
     Parameters:
     - data_file (str): The path to the CSV file.
@@ -45,9 +45,9 @@ def generate_plots(data_file, plot_title, html_file):
     show(p)
 
 def main():
-    generate_plots("data/spx_1_year_changes.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "web/plots/spx_1_year_change.html")
-    generate_plots("data/spx_2_year_changes.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "web/plots/spx_2_year_change.html")
-    generate_plots("data/spx_5_year_changes.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "web/plots/spx_5_year_change.html")
+    plot_changes("data/spx_1_year_changes.csv", "S&P 500 1 Year Same Date Change for 1993-2023", "web/plots/spx_1_year_change.html")
+    plot_changes("data/spx_2_year_changes.csv", "S&P 500 2 Year Same Date Change for 1993-2023", "web/plots/spx_2_year_change.html")
+    plot_changes("data/spx_5_year_changes.csv", "S&P 500 5 Year Same Date Change for 1993-2023", "web/plots/spx_5_year_change.html")
 
 if __name__ == "__main__":
     main()

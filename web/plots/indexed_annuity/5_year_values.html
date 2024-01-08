@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.3.2.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="efb316bf-dbc6-4d0d-b2f1-d940b15081d7" data-root-id="p1069" style="display: contents;"></div>
+  
+    <script type="application/json" id="p1102">
+      {"ef35e134-16e0-4b3b-83c7-596532b0f7fd":{"version":"3.3.2","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1069","attributes":{"width":1200,"x_range":{"type":"object","name":"FactorRange","id":"p1079","attributes":{"factors":["167114-176235","176235-185356","185356-194477","194477-203599","203599-212720","212720-221841","221841-230963","230963-240084","240084-249205","249205-258327"]}},"y_range":{"type":"object","name":"DataRange1d","id":"p1071"},"x_scale":{"type":"object","name":"CategoricalScale","id":"p1080"},"y_scale":{"type":"object","name":"LinearScale","id":"p1081"},"title":{"type":"object","name":"Title","id":"p1072","attributes":{"text":"20 Year Period Indexed Annuity Values based on SPX with 5 Year Interval"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1098","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1092","attributes":{"selected":{"type":"object","name":"Selection","id":"p1093","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1094"},"data":{"type":"map","entries":[["x",["167114-176235","176235-185356","185356-194477","194477-203599","203599-212720","212720-221841","221841-230963","230963-240084","240084-249205","249205-258327"]],["top",[165,12,1040,57,40,85,691,67,16,17]]]}}},"view":{"type":"object","name":"CDSView","id":"p1099","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1100"}}},"glyph":{"type":"object","name":"VBar","id":"p1095","attributes":{"x":{"type":"field","field":"x"},"top":{"type":"field","field":"top"},"line_color":{"type":"value","value":null},"line_width":{"type":"value","value":0.9},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1096","attributes":{"x":{"type":"field","field":"x"},"top":{"type":"field","field":"top"},"line_color":{"type":"value","value":null},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":0.9},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1097","attributes":{"x":{"type":"field","field":"x"},"top":{"type":"field","field":"top"},"line_color":{"type":"value","value":null},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":0.9},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1078","attributes":{"tools":[{"type":"object","name":"HoverTool","id":"p1101","attributes":{"renderers":"auto","tooltips":[["Value","@x"],["Number of Days","@top"]]}}]}},"toolbar_location":null,"left":[{"type":"object","name":"LinearAxis","id":"p1087","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1088","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1089"},"axis_label":"Number of Days","major_label_policy":{"type":"object","name":"AllLabels","id":"p1090"}}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p1082","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1083"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1084"},"axis_label":"Final Value","major_label_policy":{"type":"object","name":"AllLabels","id":"p1085"}}}],"center":[{"type":"object","name":"Grid","id":"p1086","attributes":{"axis":{"id":"p1082"},"grid_line_color":null}},{"type":"object","name":"Grid","id":"p1091","attributes":{"dimension":1,"axis":{"id":"p1087"},"grid_line_color":null}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1102').textContent;
+              const render_items = [{"docid":"ef35e134-16e0-4b3b-83c7-596532b0f7fd","roots":{"p1069":"efb316bf-dbc6-4d0d-b2f1-d940b15081d7"},"root_ids":["p1069"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
