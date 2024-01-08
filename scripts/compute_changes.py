@@ -56,11 +56,15 @@ def compute_changes_monthly(input_file, output_file):
     result_df.to_csv(output_file)
 
 def main():
-    input_file = 'data/spx_closing_prices.csv'
+    # input_file = 'data/spx_closing_prices.csv'
     # compute_changes_yearly(input_file, 'data/spx_1_year_changes.csv', 1)
     # compute_changes_yearly(input_file, 'data/spx_2_year_changes.csv', 2)
     # compute_changes_yearly(input_file, 'data/spx_5_year_changes.csv', 5)
-    compute_changes_monthly(input_file, 'data/spx_monthly_changes.csv')
+    # compute_changes_monthly(input_file, 'data/spx_monthly_changes.csv')
+    input_file = 'data/qqq_closing_prices.csv'
+    compute_changes_yearly(input_file, 'data/qqq_1_year_changes.csv', 1)
+    input_file = 'data/spy_closing_prices.csv'
+    compute_changes_yearly(input_file, 'data/spy_1_year_changes.csv', 1)
 
 if __name__ == "__main__":
     main()

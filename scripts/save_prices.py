@@ -4,7 +4,7 @@ from tqdm import tqdm
 
 from utils import generate_days_in_year, get_last_trading_day
 
-prices_years = list(range(1988, 2024))
+prices_years = list(range(2002, 2024))
 
 def save_prices(ticker, file, period="40y"):
     # Get the closing prices from Yahoo Finance
@@ -29,7 +29,9 @@ def save_prices(ticker, file, period="40y"):
     result_df.to_csv(file)
 
 def main():
-    save_prices("^SPX", "data/spx_closing_prices.csv")
+    # save_prices("^SPX", "data/spx_closing_prices.csv")
+    # save_prices("QQQ", "data/qqq_closing_prices.csv", "24y")
+    save_prices("SPY", "data/spy_closing_prices.csv", "24y")
 
 if __name__ == "__main__":
     main()
