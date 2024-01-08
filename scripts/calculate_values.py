@@ -19,8 +19,8 @@ def calculate_values(start_year, input_file, output_file, interval=1):
         values = []
         for year in growth_years_adjusted:
             curr_date = day.replace(year=year)
-            curr_change = changes_df.loc[changes_df['Year'] == year, curr_date.strftime("%m-%d")].values[0]
-            value *= (1 + (curr_change/100 * 2.5))
+            curr_change = changes_df.loc[changes_df['Year'] == year, curr_date.strftime("%m-%d")].values[0] / 100
+            value *= (1 + curr_change)
             values.append(value)
         dfs.append(pd.DataFrame({day.strftime("%m-%d"): values}))
 
