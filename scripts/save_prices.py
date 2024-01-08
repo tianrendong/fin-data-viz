@@ -2,7 +2,9 @@ import pandas as pd
 import yfinance as yf
 from tqdm import tqdm
 
-from utils import prices_years, generate_days_in_year, get_last_trading_day
+from utils import generate_days_in_year, get_last_trading_day
+
+prices_years = list(range(1988, 2024))
 
 def save_prices(ticker, file, period="40y"):
     # Get the closing prices from Yahoo Finance

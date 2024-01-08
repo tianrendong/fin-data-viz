@@ -1,7 +1,9 @@
 import pandas as pd
 from tqdm import tqdm
 
-from utils import growth_years, generate_days_in_year
+from utils import generate_days_in_year
+
+growth_years = list(range(2002, 2022))
 
 def calculate_growth(input_file, output_file, interval=1):
     changes_df = pd.read_csv(input_file)
@@ -31,11 +33,11 @@ def calculate_growth(input_file, output_file, interval=1):
 
 def main():
     input_file = 'data/spx_1_year_changes.csv'
-    calculate_growth(input_file, 'data/spx_1_year_growths.csv')
-    # input_file = 'data/spx_2_year_changes.csv'
-    # calculate_growth(input_file, 'data/spx_2_year_growths.csv', 2)
-    # input_file = 'data/spx_5_year_changes.csv'
-    # calculate_growth(input_file, 'data/spx_5_year_growths.csv', 5)
+    calculate_growth(input_file, 'data/indexed_annuity/spx_1_year_growths_2002_start.csv')
+    input_file = 'data/spx_2_year_changes.csv'
+    calculate_growth(input_file, 'data/indexed_annuity/spx_2_year_growths_2002_start.csv', 2)
+    input_file = 'data/spx_5_year_changes.csv'
+    calculate_growth(input_file, 'data/indexed_annuity/spx_5_year_growths_2002_start.csv', 5)
 
 if __name__ == "__main__":
     main()

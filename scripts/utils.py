@@ -2,9 +2,7 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from pandas_market_calendars import get_calendar
 
-prices_years = list(range(1988, 2024))
 years = list(range(1993, 2024))
-growth_years = list(range(2003, 2024))
 
 def generate_days_in_year(year):
     """
