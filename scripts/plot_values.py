@@ -5,7 +5,7 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.models import HoverTool
 from tqdm import tqdm
 
-def plot_indexed_annuity_values(data_dir, plot_title, html_file):
+def plot_values(data_dir, plot_title, html_file):
     """
     Plot the final values of the indexed annuity calculations.
 
@@ -48,10 +48,13 @@ def plot_indexed_annuity_values(data_dir, plot_title, html_file):
     show(p)
 
 def main():
-    # plot_indexed_annuity_values("data/indexed_annuity/1_year/", "20 Year Period Indexed Annuity Values based on SPX With 1 Year Interval", "web/plots/indexed_annuity/1_year_values.html")
-    # plot_indexed_annuity_values("data/indexed_annuity/2_year/", "20 Year Period Indexed Annuity Values based on SPX with 2 Year Interval", "web/plots/indexed_annuity/2_year_values.html")
-    # plot_indexed_annuity_values("data/indexed_annuity/5_year/", "20 Year Period Indexed Annuity Values based on SPX with 5 Year Interval", "web/plots/indexed_annuity/5_year_values.html")
-    plot_indexed_annuity_values("data/indexed_annuity/monthly/", "20 Year Period Indexed Annuity Values based on SPX with Monthly Interval", "web/plots/indexed_annuity/monthly_values.html")
+    # plot_values("data/indexed_annuity/1_year/", "20 Year Period Indexed Annuity Values based on SPX With 1 Year Interval", "web/plots/indexed_annuity/1_year_values.html")
+    # plot_values("data/indexed_annuity/2_year/", "20 Year Period Indexed Annuity Values based on SPX with 2 Year Interval", "web/plots/indexed_annuity/2_year_values.html")
+    # plot_values("data/indexed_annuity/5_year/", "20 Year Period Indexed Annuity Values based on SPX with 5 Year Interval", "web/plots/indexed_annuity/5_year_values.html")
+    # plot_values("data/indexed_annuity/monthly/", "20 Year Period Indexed Annuity Values based on SPX with Monthly Interval", "web/plots/indexed_annuity/monthly_values.html")
+    plot_values("data/index_values/qqq", "20 Year Period QQQ Values", "web/plots/index_values/qqq_value.html")
+    plot_values("data/index_values/spx", "20 Year Period SPX Values", "web/plots/index_values/spx_value.html")
+    plot_values("data/index_values/spy", "20 Year Period SPY Values", "web/plots/index_values/spy_value.html")
 
 if __name__ == "__main__":
     main()
