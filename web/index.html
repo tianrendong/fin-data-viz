@@ -5,12 +5,17 @@
 </head>
 <body>
     <h1>Welcome!</h1>
-    <p>Feel free to use this graph to visualize the same day change of SPX (S&P 500) with different intervals. This could be useful if you're considering investing in annuity or life insurance whose growth is tied to the growth of SPX on a specific day across the years.</p>
+    <p>The following graphs show the same day change of SPX (S&P 500). For example, the 1 year change shows the percent change of SPX compared to the same day one 1 year ago. If you're considering investing in annuity that has growth tied to the growth of SPX on a specific day, it might be helpful to see the days where S&P 500 had consistently higher growth.</p>
     <ul>
         <li><a href="plots/spx_1_year_change.html">SPX Same Day Change every 1 Year</a></li>
         <li><a href="plots/spx_2_year_change.html">SPX Same Day Change every 2 Years</a></li>
         <li><a href="plots/spx_5_year_change.html">SPX Same Day Change every 5 Years</a></li>
     </ul>
-    <p>See the data <a href="https://github.com/tianrendong/fin-data-viz/tree/main/data">here.</a></p>
+
+    <p>Consider an indexed annuity where the starting the account value is $125,000 ($100,000 initial investment + 25% bonus). The growth of the account value is tied to the performance of SPX on a specific day every year. The growth used for the annuity is capped at 6.25% and floored at 0%. This means even if SPX grows more than 6.25% over a year, 6.25% is used and any negative growth will not decrement the annuity value. This growth is then multipled by a factor of 2.5 and used to grow the value of the annuity. </p>
+    <p>We would like to know the distribution of expected value. The following graph shows the number of days of buying the annuity that leads to each bucket of final value. The final annuity values are computed from using historical SPX data over 20 years starting from the years of 1998, 1999, 2000, 2001, 2002, and 2003.</p>
+    <a href="plots/indexed_annuity/1_year_values.html">Indexed Annuity 20 Year Final Value Distribution</a>
+
+    <p>See the CSV data <a href="https://github.com/tianrendong/fin-data-viz/tree/main/data">here.</a></p>
 </body>
 </html>
