@@ -27,6 +27,8 @@ def calculate_indexed_annuity_values(start_year, input_file, output_file, interv
                     value *= (1 + (curr_change/100 * 2.5))
             else:
                 value *= (1 + (curr_change/100 * 2.5))
+                if value <= 0:
+                    value = 0
             values.append(value)
         dfs.append(pd.DataFrame({day.strftime("%m-%d"): values}))
 
